@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class spawnPasserbies : MonoBehaviour
 {
@@ -18,7 +16,7 @@ public class spawnPasserbies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("l"))
+        if (Input.GetKeyDown("l"))
         {
             spawnPasserby();
         }
@@ -26,9 +24,12 @@ public class spawnPasserbies : MonoBehaviour
 
     public void spawnPasserby()
     {
-        Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
+        for (int i = 0; i < 60; i++)
+        {
+            Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
 
-        Instantiate(passerbyPrefab, pos, Quaternion.identity);
+            Instantiate(passerbyPrefab, pos, Quaternion.identity);
+        }
     }
     private void OnDrawGizmosSelected()
     {
