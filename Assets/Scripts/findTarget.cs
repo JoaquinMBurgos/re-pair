@@ -16,10 +16,13 @@ public class findTarget : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "Target")
+        if (collision.gameObject.tag == "Target")
             Debug.Log("Aca habria que tirar el win");
+    }
+    private void on(Collider other)
+    {
     }
 
    
