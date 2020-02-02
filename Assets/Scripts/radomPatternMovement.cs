@@ -12,13 +12,15 @@ public class radomPatternMovement : MonoBehaviour {
     private bool isRotatingRight = false;
     private bool isWalking = false;
 
-    // Start is called before the first frame update
-    void Start() {
-        
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update(){
+
         if (isWandering == false){
             StartCoroutine(Wander());
         }
@@ -36,26 +38,31 @@ public class radomPatternMovement : MonoBehaviour {
     IEnumerator Wander(){
 
         int rotTime = Random.Range(1, 3);
-        int rotateWait = Random.Range(1, 3);
-        int rotateLorR = Random.Range(0, 3);
+        int rotateLorR = Random.Range(0, 4);
         int walkWait = Random.Range(1, 3);
         int walkTime = Random.Range(1, 5);
 
         isWandering = true;
 
         yield return new WaitForSeconds(walkWait);
+        anim.SetBool("isIdle", false);
         isWalking = true;
         yield return new WaitForSeconds(walkTime);
         isWalking = false;
+        anim.SetBool("isIdle", true);
         if (rotateLorR == 1){
+            anim.SetBool("isIdle", true);
             isRotatingRight = true;
             yield return new WaitForSeconds(rotTime);
             isRotatingRight = false;
+            anim.SetBool("isIdle", true);
         }
         if (rotateLorR == 2){
+            anim.SetBool("isIdle", false);
             isRotatingLeft = true;
             yield return new WaitForSeconds(rotTime);
             isRotatingLeft = false;
+            anim.SetBool("isIdle", true);
         }
         isWandering = false;
     }
