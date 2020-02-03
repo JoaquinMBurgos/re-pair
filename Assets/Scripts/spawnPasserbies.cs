@@ -19,7 +19,7 @@ public class spawnPasserbies : MonoBehaviour{
 
     public void spawnPasserby(){
 
-        int totrandoms = 200;
+        int totrandoms = 500;
 
 
         for (int i = 0; i < totrandoms; i++){

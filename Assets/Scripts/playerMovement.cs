@@ -15,22 +15,17 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public float jumpHeight = 3f;
 
-    private Animator anim;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_isGrounded)
-            anim.SetBool("isGrounded", false);
-        else
-            anim.SetBool("isGrounded", true);
+        
         _isGrounded = Physics.CheckSphere(_groundCheck.position, groundDistance, _groundMask);
 
         if(_isGrounded && _velocity.y <0)
@@ -54,5 +49,11 @@ public class PlayerMovement : MonoBehaviour
         _velocity.y += gravity * Time.deltaTime;
 
         _controller.Move(_velocity * Time.deltaTime);
+
+        if (Input.GetKeyDown("e"))
+        {
+            anim.SetBool("choose", true);
+        }
+
     }
 }

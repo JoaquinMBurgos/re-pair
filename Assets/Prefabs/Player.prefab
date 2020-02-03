@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4569344012632509562}
   - component: {fileID: 2971190865583849842}
   - component: {fileID: 4140602826684805431}
-  - component: {fileID: 4549547237835600762}
+  - component: {fileID: 2358943475795897196}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -48,13 +48,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.6
+  m_Height: 10.92
+  m_Radius: 4.7
   m_SlopeLimit: 45
   m_StepOffset: 0.7
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 4.58, z: 0}
 --- !u!114 &2971190865583849842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,9 +73,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   speed: 20
-  gravity: -15
+  gravity: -25
   groundDistance: 1
-  jumpHeight: 8
+  jumpHeight: 3
+  anim: {fileID: 9181202880812759048}
 --- !u!114 &4140602826684805431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,25 +89,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee2c7f9f52fa8a4c940d6df1e86b832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &4549547237835600762
-Animator:
-  serializedVersion: 3
+--- !u!135 &2358943475795897196
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4569344012632509565}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5bc23f6ecf41837498e7b55cd37e3a21, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 2
+  m_Radius: 5.64
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1 &4569344013926168507
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +244,25 @@ CapsuleCollider:
   m_Height: 10.58
   m_Direction: 1
   m_Center: {x: 0, y: 4.4, z: 0}
+--- !u!95 &9181202880812759048
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6100698530569350035}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce434a27e6b56804fb4c90cfbaf2990f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2849623990788043418
 PrefabInstance:
   m_ObjectHideFlags: 0
